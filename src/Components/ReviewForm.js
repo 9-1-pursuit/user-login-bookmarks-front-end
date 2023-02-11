@@ -6,11 +6,12 @@ function ReviewForm(props) {
   const { reviewDetails } = props;
 
   const [review, setReview] = useState({
-    reviewer: "",
+    reviewer: user.username || "",
     title: "",
     content: "",
     rating: "",
     bookmark_id: id,
+    user_id: user.id || null,
   });
 
   const handleTextChange = (event) => {
@@ -30,11 +31,12 @@ function ReviewForm(props) {
       props.toggleView();
     }
     setReview({
-      reviewer: "",
+      reviewer: user.username,
       title: "",
       content: "",
       rating: "",
       bookmark_id: id,
+      user_id: user.id,
     });
   };
   return (
